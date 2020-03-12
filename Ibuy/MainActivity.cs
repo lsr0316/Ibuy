@@ -5,7 +5,7 @@ using Android.Runtime;
 using Android.Widget;
 
 namespace Ibuy
-{
+{//test
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
