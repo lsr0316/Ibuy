@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace MobileAppScreens
 {
-    class PhotoAdapter
+    class ItemAdapter
     {
     }
 }

@@ -3,6 +3,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 
@@ -11,7 +12,15 @@ namespace MobileAppScreens
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, BottomNavigationView.IOnNavigationItemSelectedListener
     {
+       
+        Item rProducts;
+        ItemAdapter rAdapter;
+        RecyclerView mRecycleView;
+        RecyclerView.LayoutManager mLayoutManager;
         TextView textMessage;
+
+
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
