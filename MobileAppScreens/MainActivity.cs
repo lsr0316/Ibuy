@@ -13,10 +13,10 @@ namespace MobileAppScreens
     public class MainActivity : AppCompatActivity, BottomNavigationView.IOnNavigationItemSelectedListener
     {
        
-        Item rProducts;
-        ItemAdapter rAdapter;
-        RecyclerView mRecycleView;
-        RecyclerView.LayoutManager mLayoutManager;
+        Product rProduct;
+        //ItemAdapter rAdapter;
+        RecyclerView rRecycleView;
+        RecyclerView.LayoutManager rLayoutManager;
         TextView textMessage;
 
 
@@ -25,13 +25,39 @@ namespace MobileAppScreens
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
+            rProduct = new Product();
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
+
+
+         
+
+            rLayoutManager = new LinearLayoutManager(this);
+
+            //For when the Item Adapter is complete 
+           // rAdapter = new ItemAdapter(rProduct);        
+               
+
+           
+
+            rRecycleView = FindViewById<RecyclerView>(Resource.Id.recycler1);
+            rRecycleView.SetLayoutManager(rLayoutManager); ;
+          //  rRecycleView.SetAdapter(rAdapter);
+
+
 
             textMessage = FindViewById<TextView>(Resource.Id.message);
             BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
             
             navigation.SetOnNavigationItemSelectedListener(this);
+        }
+
+        private void MAdapter_ItemClick(object sender, int e)
+        {
+            int itemNum = e + 1;
+            Toast.MakeText(this, "Item number " + itemNum, ToastLength.Short).Show();
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
