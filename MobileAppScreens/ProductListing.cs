@@ -73,6 +73,11 @@ namespace MobileAppScreens
                 Description = itemview.FindViewById<TextView>(Resource.Id.textView);
                 itemview.Click += (sender, e) => listener(Position);
             }
+
+            private void Itemview_Click(object sender, EventArgs e)
+            {
+                throw new NotImplementedException();
+            }
         }
 
     }

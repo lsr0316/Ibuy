@@ -13,8 +13,8 @@ namespace MobileAppScreens
     public class MainActivity : AppCompatActivity, BottomNavigationView.IOnNavigationItemSelectedListener
     {
        
-        Product rProduct;
-        //ItemAdapter rAdapter;
+        ProductListing rProduct;
+        ItemAdapter rAdapter;
         RecyclerView rRecycleView;
         RecyclerView.LayoutManager rLayoutManager;
         TextView textMessage;
@@ -26,18 +26,22 @@ namespace MobileAppScreens
         {
             base.OnCreate(savedInstanceState);
 
-            rProduct = new Product();
+            rProduct = new ProductListing();
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
 
-         
+            rAdapter = new ItemAdapter(rProduct);
+            rAdapter.ItemClick += RAdapter_ItemClick;
 
+            rRecycleView = FindViewById<RecyclerView>(Resource.Id.recycler1);
+            rRecycleView.SetLayoutManager(rLayoutManager);
+            rRecycleView.SetAdapter(rAdapter);
             rLayoutManager = new LinearLayoutManager(this);
 
             //For when the Item Adapter is complete 
-           // rAdapter = new ItemAdapter(rProduct);        
+           rAdapter = new ItemAdapter(rProduct);        
                
 
            
@@ -52,6 +56,12 @@ namespace MobileAppScreens
             BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
             
             navigation.SetOnNavigationItemSelectedListener(this);
+        }
+
+        private void RAdapter_ItemClick(object sender, int e)
+        {
+            int prodNum = e + 1;
+            Toast.MakeText(this, "This is product :" + prodNum, ToastLength.Short).Show();
         }
 
         private void MAdapter_ItemClick(object sender, int e)

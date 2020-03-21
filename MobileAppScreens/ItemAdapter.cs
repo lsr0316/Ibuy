@@ -10,33 +10,48 @@ using Android.Runtime;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using static MobileAppScreens.ProductListing;
 
 namespace MobileAppScreens
 {
-    //class ItemAdapter :RecyclerView.Adapter
-    //{
-    //    public event EventHandler<int> ItemClick;
-    //    public Product rProduct;
-    //    public ItemAdapter(Product product)
-    //    {
-    //        rProduct = product;
-    //    }
-    //    //public override int ItemCount
-    //    //{
-    //    //    get { return rProduct.numProduct; }
-    //    //}
+    class ItemAdapter : RecyclerView.Adapter
+    {
+        public event EventHandler<int> ItemClick;
+        public ProductListing rProduct;
+        private readonly Action<int> OnClick;
 
-    //    public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
-    //    {
-    //        throw new NotImplementedException();
-    //    }
-    //    //public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
-    //    //{
-    //    //    View itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.photocard, parent, false);
-    //    //    PhotoViewHolder vh = new PhotoViewHolder(itemView, OnClick);
-    //    //    return vh;
-    //    //}
+        public ItemAdapter(ProductListing productlisting)
+        {
+            rProduct = productlisting;
+        }
+        public override int ItemCount
+        {
+            get { return rProduct.numProduct; }
+        }
 
-       
-    //}
+
+
+        //public override int ItemCount
+        //{
+        //    get { return rProduct.numProduct; }
+        //}
+
+        public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
+        {
+            ProductViewHolder vh = holder as ProductViewHolder;
+            vh.Item.SetImageResource(rProduct[position].pProductID);
+            vh.Description.Text = rProduct[position].pDescription;
+        }
+
+
+
+        public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
+        {
+            View itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.Itemcard, parent, false);
+            ProductViewHolder vh = new ProductViewHolder(itemView, OnClick);
+            return vh;
+        }
+
+
+    }
 }
