@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ibuy", "Ibuy\Ibuy.csproj", "{9E763EC2-C691-41B4-8D1D-282E67262F29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBuy_Mobile", "..\..\..\Downloads\ibuyWeb-master_Op\App1\iBuy_Mobile.csproj", "{9CAFD1C1-8CBB-4D53-9B8D-EF9911CC8968}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,12 +17,6 @@ Global
 		{9E763EC2-C691-41B4-8D1D-282E67262F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E763EC2-C691-41B4-8D1D-282E67262F29}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9E763EC2-C691-41B4-8D1D-282E67262F29}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{9CAFD1C1-8CBB-4D53-9B8D-EF9911CC8968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CAFD1C1-8CBB-4D53-9B8D-EF9911CC8968}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CAFD1C1-8CBB-4D53-9B8D-EF9911CC8968}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{9CAFD1C1-8CBB-4D53-9B8D-EF9911CC8968}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CAFD1C1-8CBB-4D53-9B8D-EF9911CC8968}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9CAFD1C1-8CBB-4D53-9B8D-EF9911CC8968}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
