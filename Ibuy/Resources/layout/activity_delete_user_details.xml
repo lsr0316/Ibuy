@@ -3,5 +3,32 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+  <TextView
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:text="Deletion Confirmation"
+      android:textColor="#f369"/>
+  <EditText
+ android:id="@+id/txt_email_address_del"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+ android:text="Email Address"
+        />
+
+  <EditText
+   android:id="@+id/txt_password_del"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+   android:text="Password"
+        />        
+
+
+
+
+  <Button
+          android:id="@+id/btn_delete"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="delete user"/>
 
 </LinearLayout>

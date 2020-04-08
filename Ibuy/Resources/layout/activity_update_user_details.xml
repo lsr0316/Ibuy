@@ -3,5 +3,77 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+  <TextView
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:text="Update User Details"
+      android:textColor="#f369"
+      android:gravity="center"
+      android:paddingBottom="25dp"/>
+
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+       android:paddingBottom="25dp">
+
+    <EditText
+     android:id="@+id/txt_email_address_up"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+      android:layout_weight="0.5"
+     android:text="Email Address"
+          
+        />
+    <Button
+        android:id="@+id/btn_get_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         android:layout_weight="0.5"
+        android:text="Find Email"/>
+
+  </LinearLayout>
+
+
+  <EditText
+      android:id="@+id/txt_first_name_up"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="First Name"
+
+       />
+
+  <EditText
+       android:id="@+id/txt_last_name_up"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+       android:text="Last Name"
+        />
+
+
+  <EditText
+android:id="@+id/txt_phone_number_up"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+android:text="Phone Number"
+        />
+  <EditText
+android:id="@+id/txt_address_up"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+android:text="Address"
+        />
+  <EditText
+android:id="@+id/txt_country_up"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+android:text="Country"
+        />
+
+  <Button
+          android:id="@+id/btn_update_up"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Update User Information"/>
 
 </LinearLayout>
