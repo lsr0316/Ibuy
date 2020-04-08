@@ -34,5 +34,12 @@
        android:text="Delete User "
 
         />
+      <Button
+        android:id="@+id/Maps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:text="Maps "
+
+        />
     
 </LinearLayout>

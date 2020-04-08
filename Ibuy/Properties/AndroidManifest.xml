@@ -5,6 +5,20 @@
           package="com.companyname.ibuy">
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
   <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme">
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBMgFE9CvMlp0hJNf3XuRMaZt_wtTymCuw" />
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+    <!-- Necessary for apps that target Android 9.0 or higher -->
+    <uses-library android:name="org.apache.http.legacy" android:required="false" />
+  
   </application>
+
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-feature android:name="android.hardware.location" android:required="false" />
+  <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+  <uses-feature android:name="android.hardware.location.network" android:required="false" />
+  
+  
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>
