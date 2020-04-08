@@ -64,6 +64,7 @@
     <Compile Include="Activities\DeleteUserDetailsActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\UpdateUserDetailsActivity.cs" />
+    <Compile Include="Activities\User.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

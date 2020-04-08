@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-       android:text="Test Text" 
+       android:text="Test Text this is to test the logic before w e put in a  tab layout" 
        
         />
     <Button
