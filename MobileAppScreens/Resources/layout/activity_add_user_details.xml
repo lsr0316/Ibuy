@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <TextView
+      android:id="@+id/RegForm_add"
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:text="Register Form"
+      android:textColor="#f369"/>
+  <EditText
+      android:id="@+id/txt_first_name_add"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="First Name"
+
+       />
+
+  <EditText
+       android:id="@+id/txt_last_name_add"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+       android:hint="Last Name"
+        />
+  <EditText
+   android:id="@+id/txt_password_add"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+   android:hint="Password"
+        />        />
+  <EditText
+   android:id="@+id/txt_email_address_add"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+   android:hint="Email Address"
+        />
+  <EditText
+android:id="@+id/txt_phone_number_add"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+android:hint="Phone Number"
+        />
+  <EditText
+android:id="@+id/txt_address_add"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+android:hint="Address"
+        />
+  <EditText
+android:id="@+id/txt_country_add"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+android:hint="Country"
+        />
+
+  <Button
+          android:id="@+id/btn_register_add"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Register"/>
+
+</LinearLayout>
