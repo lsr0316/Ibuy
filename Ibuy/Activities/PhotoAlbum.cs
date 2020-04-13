@@ -48,8 +48,8 @@ namespace Ibuy.Activities
         }
         public class PhotoViewHolder : RecyclerView.ViewHolder
         {
-            public ImageView Image { get; set; }
-            public TextView Caption { get; set; }
+            public ImageView Image { get;  set; }
+            public TextView Caption { get;  set; }
             public PhotoViewHolder(View itemview, Action<int> listener) : base(itemview)
             {
                 Image = itemview.FindViewById<ImageView>(Resource.Id.imageView);
