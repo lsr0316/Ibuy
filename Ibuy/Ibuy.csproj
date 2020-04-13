@@ -64,6 +64,7 @@
     <Compile Include="Activities\DeleteUserDetailsActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\PhotoAlbum.cs" />
+    <Compile Include="Activities\share.cs" />
     <Compile Include="Activities\UpdateUserDetailsActivity.cs" />
     <Compile Include="Activities\User.cs" />
     <Compile Include="Adapter\PhotoAlbumAdapter.cs" />
@@ -183,6 +184,14 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ipad1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\share.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_stat_button_click.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
