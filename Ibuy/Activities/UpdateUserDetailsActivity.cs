@@ -45,6 +45,8 @@ namespace Ibuy.Activities
                 }
                 catch (Exception ex)
                 { }
+                finally
+                { }
 
                 if (user == null)
                 {
