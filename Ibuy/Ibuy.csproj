@@ -63,8 +63,10 @@
     <Compile Include="Activities\AddUserDetailsActivity.cs" />
     <Compile Include="Activities\DeleteUserDetailsActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Activities\PhotoAlbum.cs" />
     <Compile Include="Activities\UpdateUserDetailsActivity.cs" />
     <Compile Include="Activities\User.cs" />
+    <Compile Include="Adapter\PhotoAlbumAdapter.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

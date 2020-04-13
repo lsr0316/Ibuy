@@ -8,6 +8,7 @@ using Android.Gms.Maps;
 using System;
 using Xamarin.Essentials;
 using Android.Gms.Maps.Model;
+using Android.Views;
 
 namespace Ibuy
 {//test
@@ -39,9 +40,29 @@ namespace Ibuy
 
         }
 
+        //Android.Widget.SearchView searchView;
+        //public override bool OnCreateOptionsMenu(IMenu menu)
+        //{
+        //    this.MenuInflater.Inflate(Resource.Menu.menu1, menu);
+
+        //  //  var searchItem = menu.FindItem(Resource.Id.navigation_map);
+
+        //  //  searchView = searchItem.ActionProvider.JavaCast<Android.Widget.SearchView>();
+
+        //    searchView.QueryTextSubmit += (sender, args) =>
+        //    {
+        //        Toast.MakeText(this, "You searched: " + args.Query, ToastLength.Short).Show();
+
+        //    };
+
+
+        //    return base.OnCreateOptionsMenu(menu);
+        //}
+
+
         private void BtnMap_Click(object sender, EventArgs e)
         {
-            SetContentView(Resource.Layout.map_layout);
+            SetContentView(Resource.Layout.share);
         }
 
         private void BtnDeleteUser_Click(object sender, System.EventArgs e)
