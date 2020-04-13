@@ -38,7 +38,7 @@ namespace Ibuy.Activities
 
 
                 HttpClient client = new HttpClient();
-                string url = "https://localhost:44366/api/User" + confirmUserName.Text.ToString();
+                string url = "https://https://10.0.2.2:5001/api/userDetails?" + confirmUserName.Text.ToString();
 
                 var uri = new Uri(url);
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));

@@ -46,7 +46,7 @@ namespace Ibuy.Activities
                 user.country = editCountry.Text;
 
                 HttpClient client = new HttpClient();
-                string url = "https://localhost:5001/api/userDetails?firstName={user.FirstName}&lastname={user.LastName}&address={user.Address}&password{user.Password}&phonenumber{user.PhoneNumber}&country{user.Country}&username{user.Email}";
+                string url = "https://https://10.0.2.2:5001/api/userDetails?firstName={user.FirstName}&lastname={user.LastName}&address={user.Address}&password{user.Password}&phonenumber{user.PhoneNumber}&country{user.Country}&username{user.Email}";
 
                 var uri = new Uri(url);
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
