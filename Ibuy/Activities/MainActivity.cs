@@ -18,7 +18,7 @@ namespace Ibuy
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, IOnMapReadyCallback //, BottomNavigationView.IOnNavigationItemSelectedListener
     {
-        private Button btnAddUser, btnUpdateUser, btnDeleteUser ,btnMap ,btnList , btnLogin;
+        private Button btnAddUser, btnUpdateUser, btnDeleteUser ,btnMap ,btnList , btnLogin, btnShare;
         RecyclerView mRecycleView;
         RecyclerView.LayoutManager mLayoutManager;
         PhotoAlbum mPhotoAlbum;
@@ -48,10 +48,17 @@ namespace Ibuy
             btnAddUser.Click +=     delegate    { StartActivity(typeof(AddUserDetailsActivity)); };
             btnUpdateUser.Click += delegate { StartActivity(typeof(UpdateUserDetailsActivity)); };
             btnDeleteUser.Click += delegate { StartActivity(typeof(DeleteUserDetailsActivity)); };
+            btnShare = FindViewById<Button>(Resource.Id.btn_share_page);
+            btnShare.Click += BtnShare_Click;
 
             
 
 
+        }
+
+        private void BtnShare_Click(object sender, EventArgs e)
+        {
+            SetContentView(Resource.Layout.share);
         }
 
         private void BtnList_Click(object sender, EventArgs e)
