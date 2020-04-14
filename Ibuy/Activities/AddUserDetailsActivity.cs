@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 
@@ -45,40 +47,41 @@ namespace Ibuy.Activities
                 user.address = editAddress.Text;
                 user.country = editCountry.Text;
 
-                HttpClient client = new HttpClient();
-                string url = "https://https://10.0.2.2:5001/api/userDetails?firstName={user.FirstName}&lastname={user.LastName}&address={user.Address}&password{user.Password}&phonenumber{user.PhoneNumber}&country{user.Country}&username{user.Email}";
+                var request = HttpWebRequest.Create(string.Format(@"https://10.0.2.2:5001/api/userDetail"));
+                request.ContentType = "application/json";
+                request.Method = "POST";
 
-                var uri = new Uri(url);
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response;
-                var json = JsonConvert.SerializeObject(user);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                response = await client.PostAsync(uri, content);
-                Clear();
-                if (response.StatusCode == System.Net.HttpStatusCode.Accepted)
+
+                var userJason = JsonConvert.SerializeObject(user);
+
+
+                using (var streamWriter = new StreamWriter(request.GetRequestStream()))
                 {
-                    Toast.MakeText(this, "Your feedback was saved", ToastLength.Long).Show();
+
+                    streamWriter.Write(userJason);
                 }
-                else
+                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
                 {
-                    Toast.MakeText(this, "Your feedback was  not saved", ToastLength.Long).Show();
+
+                    if (response.StatusCode != HttpStatusCode.Created)
+                    {
+                        Console.Out.WriteLine("Error fetching data. Server returned status code: {0}", response.StatusCode);
+                        Toast.MakeText(this, "Failed to create user. Please retry!", ToastLength.Long);
+                    }
+                    else
+                    {
+                        Toast.MakeText(this, "User created successfully", ToastLength.Long);
+
+
+                        Intent LoginIntent = new Intent(this, typeof(MainActivity));
+                        StartActivity(LoginIntent);
+                    }
                 }
             };
-            void Clear()
-            {
-                editEmail.Text = "";
-                editAddress.Text = "";
-                editCountry.Text = "";
-                editFName.Text = "";
-                editLName.Text = "";
-                editPNumber.Text = "";
-                editPassword.Text = "";
-
-            }
-
-            // Create your application here
         }
-
-
     }
 }
+            
+
+
+            

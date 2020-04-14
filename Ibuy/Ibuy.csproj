@@ -63,6 +63,7 @@
     <Compile Include="Activities\AddUserDetailsActivity.cs" />
     <Compile Include="Activities\DeleteUserDetailsActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Activities\navigation.cs" />
     <Compile Include="Activities\PhotoAlbum.cs" />
     <Compile Include="Activities\share.cs" />
     <Compile Include="Activities\UpdateUserDetailsActivity.cs" />

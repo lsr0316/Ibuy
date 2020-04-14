@@ -153,9 +153,6 @@ namespace Ibuy
             }
         }
 
-
-
-
         private void getLastLocation(GoogleMap googleMap)
         {
             throw new NotImplementedException();
