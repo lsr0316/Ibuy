@@ -80,7 +80,7 @@ namespace Ibuy
         {
             
                 //map_layout
-            SetContentView(Resource.Layout.navigation_layout);
+            SetContentView(Resource.Layout.map_layout);
         }
 
         private void BtnDeleteUser_Click(object sender, System.EventArgs e)
