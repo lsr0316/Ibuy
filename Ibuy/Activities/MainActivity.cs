@@ -16,7 +16,7 @@ namespace Ibuy
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, IOnMapReadyCallback
     {
-        private Button btnAddUser, btnUpdateUser, btnDeleteUser ,btnMap;
+        private Button btnAddUser, btnUpdateUser, btnDeleteUser ,btnMap ,btnList;
         RecyclerView mRecycleView;
         RecyclerView.LayoutManager mLayoutManager;
         PhotoAlbum mPhotoAlbum;
@@ -38,14 +38,32 @@ namespace Ibuy
             btnUpdateUser = FindViewById<Button>(Resource.Id.btn_two);
             btnDeleteUser = FindViewById<Button>(Resource.Id.btn_three);
             btnMap = FindViewById<Button>(Resource.Id.btn_maps);
-
+            btnList = FindViewById<Button>(Resource.Id.btn_list);
+            btnList.Click += BtnList_Click;
             btnMap.Click += BtnMap_Click;
             btnAddUser.Click += delegate { StartActivity(typeof(AddUserDetailsActivity)); };
             btnUpdateUser.Click += delegate { StartActivity(typeof(UpdateUserDetailsActivity)); };
             btnDeleteUser.Click += delegate { StartActivity(typeof(DeleteUserDetailsActivity)); };
 
 
-            base.OnCreate(savedInstanceState);
+        ////    base.OnCreate(savedInstanceState);
+        //    mPhotoAlbum = new PhotoAlbum();
+        //    // Set our view from the "main" layout resource
+        //    SetContentView(Resource.Layout.list);
+        //    mRecycleView = FindViewById<RecyclerView>(Resource.Id.recyclerView);
+        //    mLayoutManager = new LinearLayoutManager(this);
+        //    mRecycleView.SetLayoutManager(mLayoutManager);
+        //    mAdapter = new PhotoAlbumAdapter(mPhotoAlbum);
+        //    mAdapter.ItemClick += MAdapter_ItemClick;
+        //    mRecycleView.SetAdapter(mAdapter);
+
+
+
+        }
+
+        private void BtnList_Click(object sender, EventArgs e)
+        {
+           
             mPhotoAlbum = new PhotoAlbum();
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.list);
@@ -55,9 +73,6 @@ namespace Ibuy
             mAdapter = new PhotoAlbumAdapter(mPhotoAlbum);
             mAdapter.ItemClick += MAdapter_ItemClick;
             mRecycleView.SetAdapter(mAdapter);
-
-
-
         }
 
         private void BtnMap_Click(object sender, EventArgs e)

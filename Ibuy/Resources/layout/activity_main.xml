@@ -19,6 +19,13 @@
        android:text="Add user "
 
         />
+     <Button
+        android:id="@+id/btn_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:text="List"
+
+        />
 
      <Button
         android:id="@+id/btn_two"
