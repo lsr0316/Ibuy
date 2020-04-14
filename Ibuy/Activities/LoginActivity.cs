@@ -15,7 +15,7 @@ namespace Ibuy.Activities
     [Activity(Label = "LoginActivity")]
     public class LoginActivity : Activity
     {
-        Button btn1;
+        Button btn1 ;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             

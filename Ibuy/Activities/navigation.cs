@@ -38,7 +38,7 @@ namespace Ibuy.Activities
                   //  textMessage.SetText(Resource.String.title_home);
                     return true;
                 case Resource.Id.navigation_map:
-                    SetContentView(Resource.Layout.map_layout);
+                    SetContentView(Resource.Layout.share);
                     //textMessage.SetText(Resource.String.title_map);
                     
                     return true;

@@ -49,8 +49,7 @@ namespace Ibuy
             btnUpdateUser.Click += delegate { StartActivity(typeof(UpdateUserDetailsActivity)); };
             btnDeleteUser.Click += delegate { StartActivity(typeof(DeleteUserDetailsActivity)); };
 
-
-
+            
 
 
         }
@@ -62,6 +61,7 @@ namespace Ibuy
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.list);
             mRecycleView = FindViewById<RecyclerView>(Resource.Id.recyclerView);
+
             mLayoutManager = new LinearLayoutManager(this);
             mRecycleView.SetLayoutManager(mLayoutManager);
             mAdapter = new PhotoAlbumAdapter(mPhotoAlbum);
