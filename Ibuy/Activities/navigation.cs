@@ -25,8 +25,8 @@ namespace Ibuy.Activities
             SetContentView(Resource.Layout.activity_main);
 
             textMessage = FindViewById<TextView>(Resource.Id.message);
-            BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
-            navigation.SetOnNavigationItemSelectedListener(this);
+            BottomNavigationView nav = FindViewById<BottomNavigationView>(Resource.Id.navigation);
+            //nav.SetOnNavigationItemSelectedListener(this);
            
         }
 

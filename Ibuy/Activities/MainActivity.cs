@@ -16,7 +16,7 @@ using Android.Views;
 namespace Ibuy
 {//test
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity, IOnMapReadyCallback, BottomNavigationView.IOnNavigationItemSelectedListener
+    public class MainActivity : AppCompatActivity, IOnMapReadyCallback //, BottomNavigationView.IOnNavigationItemSelectedListener
     {
         private Button btnAddUser, btnUpdateUser, btnDeleteUser ,btnMap ,btnList;
         RecyclerView mRecycleView;
@@ -47,7 +47,7 @@ namespace Ibuy
             btnUpdateUser.Click += delegate { StartActivity(typeof(UpdateUserDetailsActivity)); };
             btnDeleteUser.Click += delegate { StartActivity(typeof(DeleteUserDetailsActivity)); };
 
-
+            
 
 
 
@@ -167,10 +167,31 @@ namespace Ibuy
             throw new NotImplementedException();
         }
 
-        public bool OnNavigationItemSelected(IMenuItem item)
-        {
-            throw new NotImplementedException();
-        }
+        //public bool OnNavigationItemSelected(IMenuItem item)
+        //{
+        //    switch (item.ItemId)
+        //    {
+        //        case Resource.Id.navigation_home:
+        //            //  textMessage.SetText(Resource.String.title_home);
+        //            SetContentView(Resource.Layout.list);
+        //            return true;
+        //        case Resource.Id.navigation_map:
+        //            SetContentView(Resource.Layout.map_layout);
+        //            //textMessage.SetText(Resource.String.title_map);
+
+        //            return true;
+        //        case Resource.Id.navigation_Items:
+        //            SetContentView(Resource.Layout.list);
+        //            StartActivity(typeof(DeleteUserDetailsActivity));
+        //            //  textMessage.SetText(Resource.String.title_Items);
+        //            return true;
+        //        case Resource.Id.navigation_profile:
+        //            SetContentView(Resource.Layout.activity_update_user_details);
+        //            //    textMessage.SetText(Resource.String.title_profile);
+        //            return true;
+        //    }
+        //    return false;
+        //}
     }
 
 }
