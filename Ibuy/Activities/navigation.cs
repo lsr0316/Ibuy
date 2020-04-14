@@ -43,10 +43,12 @@ namespace Ibuy.Activities
                     
                     return true;
                 case Resource.Id.navigation_Items:
-                    textMessage.SetText(Resource.String.title_Items);
+                    StartActivity(typeof(AddUserDetailsActivity));
+                    //textMessage.SetText(Resource.String.title_Items);
                     return true;
                 case Resource.Id.navigation_profile:
-                    textMessage.SetText(Resource.String.title_profile);
+                    // textMessage.SetText(Resource.String.title_profile);
+                    StartActivity(typeof(AddUserDetailsActivity));
                     return true;
             }
             return false;
