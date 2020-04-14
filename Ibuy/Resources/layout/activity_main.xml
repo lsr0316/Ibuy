@@ -65,4 +65,13 @@
        android:text="share Page "
 
         />
+
+    
+    <Button
+        android:id="@+id/btn_home_screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:text="Home Page "
+
+        />
 </LinearLayout>
