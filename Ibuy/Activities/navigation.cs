@@ -35,10 +35,12 @@ namespace Ibuy.Activities
             switch (item.ItemId)
             {
                 case Resource.Id.navigation_home:
-                    textMessage.SetText(Resource.String.title_home);
+                  //  textMessage.SetText(Resource.String.title_home);
                     return true;
                 case Resource.Id.navigation_map:
-                    textMessage.SetText(Resource.String.title_map);
+                    SetContentView(Resource.Layout.map_layout);
+                    //textMessage.SetText(Resource.String.title_map);
+                    
                     return true;
                 case Resource.Id.navigation_Items:
                     textMessage.SetText(Resource.String.title_Items);
