@@ -36,16 +36,16 @@ namespace Ibuy.Activities
             btnHome = FindViewById<Button>(Resource.Id.btn_home);
             btnRegister = FindViewById<Button>(Resource.Id.btn_register_add);
               btnRegister.Click += BtnRegister_Click;
-          //  btnHome.Click += BtnHome_Click;
+            btnHome.Click += BtnHome_Click;
 
 
 
         }
 
-        //private void BtnHome_Click(object sender, EventArgs e)
-        //{
-        //    SetContentView(Resource.Layout.navigation_layout);
-        //}
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+            SetContentView(Resource.Layout.navigation_layout);
+        }
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
