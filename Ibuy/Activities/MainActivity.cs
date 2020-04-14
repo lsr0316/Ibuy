@@ -10,11 +10,13 @@ using Xamarin.Essentials;
 using Android.Gms.Maps.Model;
 using Android.Support.V7.Widget;
 using Ibuy.Adapter;
+using Android.Support.Design.Widget;
+using Android.Views;
 
 namespace Ibuy
 {//test
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity, IOnMapReadyCallback
+    public class MainActivity : AppCompatActivity, IOnMapReadyCallback, BottomNavigationView.IOnNavigationItemSelectedListener
     {
         private Button btnAddUser, btnUpdateUser, btnDeleteUser ,btnMap ,btnList;
         RecyclerView mRecycleView;
@@ -46,16 +48,6 @@ namespace Ibuy
             btnDeleteUser.Click += delegate { StartActivity(typeof(DeleteUserDetailsActivity)); };
 
 
-        ////    base.OnCreate(savedInstanceState);
-        //    mPhotoAlbum = new PhotoAlbum();
-        //    // Set our view from the "main" layout resource
-        //    SetContentView(Resource.Layout.list);
-        //    mRecycleView = FindViewById<RecyclerView>(Resource.Id.recyclerView);
-        //    mLayoutManager = new LinearLayoutManager(this);
-        //    mRecycleView.SetLayoutManager(mLayoutManager);
-        //    mAdapter = new PhotoAlbumAdapter(mPhotoAlbum);
-        //    mAdapter.ItemClick += MAdapter_ItemClick;
-        //    mRecycleView.SetAdapter(mAdapter);
 
 
 
@@ -77,7 +69,9 @@ namespace Ibuy
 
         private void BtnMap_Click(object sender, EventArgs e)
         {
-            SetContentView(Resource.Layout.map_layout);
+            
+                //map_layout
+            SetContentView(Resource.Layout.navigation_layout);
         }
 
         private void BtnDeleteUser_Click(object sender, System.EventArgs e)
@@ -173,8 +167,10 @@ namespace Ibuy
             throw new NotImplementedException();
         }
 
-
-
+        public bool OnNavigationItemSelected(IMenuItem item)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
