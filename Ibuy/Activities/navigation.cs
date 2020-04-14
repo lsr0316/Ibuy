@@ -22,7 +22,7 @@ namespace Ibuy.Activities
             base.OnCreate(savedInstanceState);
             navigation navigation1 = this;
             Xamarin.Essentials.Platform.Init(navigation1, savedInstanceState);
-            SetContentView(Resource.Layout.activity_main);
+            SetContentView(Resource.Layout.navigation_layout);
 
             textMessage = FindViewById<TextView>(Resource.Id.message);
             BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);

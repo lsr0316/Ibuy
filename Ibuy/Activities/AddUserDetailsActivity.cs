@@ -20,8 +20,7 @@ namespace Ibuy.Activities
     public class AddUserDetailsActivity : Activity
     {
         private EditText editFName, editLName, editPNumber, editEmail, editPassword, editAddress, editCountry;
-        private Button btnRegister;
-        // SetContentView(Resource.Layout.activity_add_user_details_);
+        private Button btnRegister, btnHome;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             SetContentView(Resource.Layout.activity_add_user_details);
@@ -34,50 +33,65 @@ namespace Ibuy.Activities
             editPNumber = FindViewById<EditText>(Resource.Id.txt_phone_number_add);
             editPassword = FindViewById<EditText>(Resource.Id.txt_password_add);
             editEmail = FindViewById<EditText>(Resource.Id.txt_email_address_add);
-
-           
-
-                User user = new User();
-                user.firstname = editFName.Text;
-                user.lastname = editLName.Text;
-                user.username = editEmail.Text;
-                user.password = editPassword.Text;
-                user.phonenumber = editPNumber.Text;
-                user.address = editAddress.Text;
-                user.country = editCountry.Text;
-
-                var request = HttpWebRequest.Create(string.Format(@"https://10.0.2.2:5001/api/userDetail"));
-                request.ContentType = "application/json";
-                request.Method = "POST";
+            btnHome = FindViewById<Button>(Resource.Id.btn_home);
+            btnRegister = FindViewById<Button>(Resource.Id.btn_register_add);
+              btnRegister.Click += BtnRegister_Click;
+            btnHome.Click += BtnHome_Click;
 
 
-                var userJason = JsonConvert.SerializeObject(user);
 
-
-                using (var streamWriter = new StreamWriter(request.GetRequestStream()))
-                {
-
-                    streamWriter.Write(userJason);
-                }
-                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
-                {
-
-                    if (response.StatusCode != HttpStatusCode.Created)
-                    {
-                        Console.Out.WriteLine("Error fetching data. Server returned status code: {0}", response.StatusCode);
-                        Toast.MakeText(this, "Failed to create user. Please retry!", ToastLength.Long);
-                    }
-                    else
-                    {
-                        Toast.MakeText(this, "User created successfully", ToastLength.Long);
-
-
-                        Intent LoginIntent = new Intent(this, typeof(MainActivity));
-                        StartActivity(LoginIntent);
-                    }
-                }
-            
         }
+
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+            SetContentView(Resource.Layout.navigation_layout);
+        }
+
+        private void BtnRegister_Click(object sender, EventArgs e)
+        {
+
+            User user = new User();
+            user.firstname = editFName.Text;
+            user.lastname = editLName.Text;
+            user.username = editEmail.Text;
+            user.password = editPassword.Text;
+            user.phonenumber = editPNumber.Text;
+            user.address = editAddress.Text;
+            user.country = editCountry.Text;
+
+            var request = HttpWebRequest.Create(string.Format(@"https://10.0.2.2:5001/api/userDetail"));
+            request.ContentType = "application/json";
+            request.Method = "POST";
+
+
+            var userJason = JsonConvert.SerializeObject(user);
+
+
+            using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+            {
+
+                streamWriter.Write(userJason);
+            }
+            using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+            {
+
+                if (response.StatusCode != HttpStatusCode.Created)
+                {
+                    Console.Out.WriteLine("Error fetching data. Server returned status code: {0}", response.StatusCode);
+                    Toast.MakeText(this, "Failed to create user. Please retry!", ToastLength.Long);
+                }
+                else
+                {
+                    Toast.MakeText(this, "User created successfully", ToastLength.Long);
+
+
+                    Intent LoginIntent = new Intent(this, typeof(MainActivity));
+                    StartActivity(LoginIntent);
+                }
+            }
+        }
+
+     
     }
 }
             
