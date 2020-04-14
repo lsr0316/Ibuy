@@ -16,7 +16,7 @@ namespace Ibuy.Activities
 {
     
     [Activity(Label = "share")]
-    public class share : Activity
+    public class Share : Activity
     {
         static readonly int NOTIFICATION_ID = 1000;
         static readonly string CHANNEL_ID = "location_notification";
@@ -46,7 +46,7 @@ namespace Ibuy.Activities
         }
         public async Task ShareText(string text)
         {
-            await Share.RequestAsync(new ShareTextRequest
+            await Xamarin.Essentials.Share.RequestAsync(new ShareTextRequest
             {
                 Text = text,
                 Title = "Share Text"
@@ -55,7 +55,7 @@ namespace Ibuy.Activities
 
         public async Task ShareUri(string uri)
         {
-            await Share.RequestAsync(new ShareTextRequest
+            await Xamarin.Essentials.Share.RequestAsync(new ShareTextRequest
             {
                 Uri = uri,
                 Title = "Share Web Link"
@@ -115,7 +115,7 @@ namespace Ibuy.Activities
             EditText editText1 = FindViewById<EditText>(Resource.Id.editText1);
             await ShareText("Hello " + editText1.Text);
 
-            await Share.RequestAsync(new ShareTextRequest
+            await Xamarin.Essentials.Share.RequestAsync(new ShareTextRequest
             {
                 Uri = "https://docs.microsoft.com/en-us/xamarin/essentials/share?tabs=android",
                 Title = "Share  Link"

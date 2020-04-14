@@ -14,19 +14,19 @@ using Android.Widget;
 namespace Ibuy.Activities
 {
     [Activity(Label = "navigation")]
-    public class navigation : Activity , BottomNavigationView.IOnNavigationItemSelectedListener
+    public class Navigation : Activity , BottomNavigationView.IOnNavigationItemSelectedListener
     {
         TextView textMessage;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            navigation navigation1 = this;
+            Navigation navigation1 = this;
             Xamarin.Essentials.Platform.Init(navigation1, savedInstanceState);
             SetContentView(Resource.Layout.navigation_layout);
 
             textMessage = FindViewById<TextView>(Resource.Id.message);
-            BottomNavigationView nav = FindViewById<BottomNavigationView>(Resource.Id.navigation);
-            //nav.SetOnNavigationItemSelectedListener(this);
+            BottomNavigationView bNavView = FindViewById<BottomNavigationView>(Resource.Id.navigation);
+            bNavView.SetOnNavigationItemSelectedListener(this);
            
         }
 
