@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Activities\AddUserDetailsActivity.cs" />
     <Compile Include="Activities\DeleteUserDetailsActivity.cs" />
+    <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\navigation.cs" />
     <Compile Include="Activities\PhotoAlbum.cs" />
@@ -193,6 +194,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_stat_button_click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_login.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

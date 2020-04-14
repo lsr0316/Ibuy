@@ -27,18 +27,21 @@
    android:id="@+id/txt_password_add"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
+        android:inputType="textPassword"
    android:hint="Password"
         />        />
   <EditText
    android:id="@+id/txt_email_address_add"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
    android:hint="Email Address"
         />
   <EditText
 android:id="@+id/txt_phone_number_add"
  android:layout_width="match_parent"
  android:layout_height="wrap_content"
+        android:inputType="phone"
 android:hint="Phone Number"
         />
   <EditText
@@ -46,6 +49,7 @@ android:id="@+id/txt_address_add"
  android:layout_width="match_parent"
  android:layout_height="wrap_content"
 android:hint="Address"
+        android:inputType="textPostalAddress"
         />
   <EditText
 android:id="@+id/txt_country_add"
@@ -59,5 +63,9 @@ android:hint="Country"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="Register"/>
-
+     <Button
+          android:id="@+id/btn_home"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Home"/>
 </LinearLayout>

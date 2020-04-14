@@ -18,7 +18,7 @@ namespace Ibuy
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, IOnMapReadyCallback //, BottomNavigationView.IOnNavigationItemSelectedListener
     {
-        private Button btnAddUser, btnUpdateUser, btnDeleteUser ,btnMap ,btnList;
+        private Button btnAddUser, btnUpdateUser, btnDeleteUser ,btnMap ,btnList , btnLogin;
         RecyclerView mRecycleView;
         RecyclerView.LayoutManager mLayoutManager;
         PhotoAlbum mPhotoAlbum;
@@ -41,14 +41,15 @@ namespace Ibuy
             btnDeleteUser = FindViewById<Button>(Resource.Id.btn_three);
             btnMap = FindViewById<Button>(Resource.Id.btn_maps);
             btnList = FindViewById<Button>(Resource.Id.btn_list);
+            btnLogin = FindViewById<Button>(Resource.Id.btn_login_page);
             btnList.Click += BtnList_Click;
             btnMap.Click += BtnMap_Click;
-            btnAddUser.Click += delegate { StartActivity(typeof(AddUserDetailsActivity)); };
+            btnLogin.Click         += delegate      { StartActivity(typeof(LoginActivity)); };
+            btnAddUser.Click +=     delegate    { StartActivity(typeof(AddUserDetailsActivity)); };
             btnUpdateUser.Click += delegate { StartActivity(typeof(UpdateUserDetailsActivity)); };
             btnDeleteUser.Click += delegate { StartActivity(typeof(DeleteUserDetailsActivity)); };
 
             
-
 
 
         }
@@ -60,6 +61,7 @@ namespace Ibuy
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.list);
             mRecycleView = FindViewById<RecyclerView>(Resource.Id.recyclerView);
+
             mLayoutManager = new LinearLayoutManager(this);
             mRecycleView.SetLayoutManager(mLayoutManager);
             mAdapter = new PhotoAlbumAdapter(mPhotoAlbum);
