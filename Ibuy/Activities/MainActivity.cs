@@ -9,17 +9,20 @@ using System;
 using Xamarin.Essentials;
 using Android.Gms.Maps.Model;
 using Android.Views;
+using Android.Support.Design.Widget;
 
 namespace Ibuy
 {//test
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity, IOnMapReadyCallback
+    public class MainActivity : AppCompatActivity, IOnMapReadyCallback, BottomNavigationView.IOnNavigationItemSelectedListener
     {
         private Button btnAddUser, btnUpdateUser, btnDeleteUser ,btnMap;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+          //  BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
+           // navigation.SetOnNavigationItemSelectedListener(this);
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
@@ -39,25 +42,27 @@ namespace Ibuy
 
 
         }
+        public bool OnNavigationItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId) 
+            { 
+            //{
+            //    case Resource.Id.navigation_home:
+            //        SetContentView(Resource.Layout);
+            //        return true;
+            //    case Resource.Id.navigation_map:
+            //        SetContentView(Resource.Layout);
+            //        return true;
+            //    case Resource.Id.navigation_Items:
+            //        SetContentView(Resource.Layout);
+            //        return true;
+            //    case Resource.Id.navigation_profile:
+            //        SetContentView(Resource.Layout);
+            //        return true;
+            }
 
-        //Android.Widget.SearchView searchView;
-        //public override bool OnCreateOptionsMenu(IMenu menu)
-        //{
-        //    this.MenuInflater.Inflate(Resource.Menu.menu1, menu);
-
-        //  //  var searchItem = menu.FindItem(Resource.Id.navigation_map);
-
-        //  //  searchView = searchItem.ActionProvider.JavaCast<Android.Widget.SearchView>();
-
-        //    searchView.QueryTextSubmit += (sender, args) =>
-        //    {
-        //        Toast.MakeText(this, "You searched: " + args.Query, ToastLength.Short).Show();
-
-        //    };
-
-
-        //    return base.OnCreateOptionsMenu(menu);
-        //}
+            return false;
+        }
 
 
         private void BtnMap_Click(object sender, EventArgs e)

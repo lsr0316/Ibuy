@@ -19,11 +19,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.6">
+        android:layout_weight="0.5">
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
           android:id="@+id/map"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           class="com.google.android.gms.maps.MapFragment" />
  </RelativeLayout>
+   
 </LinearLayout>
