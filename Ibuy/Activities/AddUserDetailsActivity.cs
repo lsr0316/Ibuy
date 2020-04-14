@@ -35,8 +35,7 @@ namespace Ibuy.Activities
             editPassword = FindViewById<EditText>(Resource.Id.txt_password_add);
             editEmail = FindViewById<EditText>(Resource.Id.txt_email_address_add);
 
-            btnRegister.Click += async delegate
-            {
+           
 
                 User user = new User();
                 user.firstname = editFName.Text;
@@ -77,7 +76,7 @@ namespace Ibuy.Activities
                         StartActivity(LoginIntent);
                     }
                 }
-            };
+            
         }
     }
 }

@@ -14,6 +14,7 @@ using Xamarin.Essentials;
 
 namespace Ibuy.Activities
 {
+    
     [Activity(Label = "share")]
     public class share : Activity
     {
