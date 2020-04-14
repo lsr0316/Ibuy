@@ -5,10 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-   <FrameLayout
-        android:id="@+id/frameLayout1"
+   <RelativeLayout
+        android:id="@+id/frameLayout"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
+       android:layout_height="wrap_content">
+   <include
+            layout="@layout/photocard"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+      <RelativeLayout
+        
+        android:id="@+id/frameLayout2"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+   <include
+            layout="@layout/list"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
+    </RelativeLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
