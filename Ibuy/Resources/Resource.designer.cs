@@ -3587,10 +3587,10 @@ namespace Ibuy
 			public const int btn_one = 2131230773;
 			
 			// aapt resource value: 0x7F080036
-			public const int btn_registerPage = 2131230774;
+			public const int btn_register_add = 2131230774;
 			
 			// aapt resource value: 0x7F080037
-			public const int btn_register_add = 2131230775;
+			public const int btn_register_page = 2131230775;
 			
 			// aapt resource value: 0x7F080038
 			public const int btn_three = 2131230776;

@@ -12,31 +12,25 @@ using Android.Widget;
 
 namespace Ibuy.Activities
 {
-    [Activity(Label = "LoginActivity",Theme = "@style/AppTheme", MainLauncher = false)]
+    [Activity(Label = "LoginActivity")]
     public class LoginActivity : Activity
     {
-        Button btnLogin ,btnRegister;
+        Button btn1;
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            btnLogin = FindViewById<Button>(Resource.Id.btn_registerPage);
-            btnRegister = FindViewById<Button>(Resource.Id.btn_login);
-            SetContentView(Resource.Layout.activity_login);
-            base.OnCreate(savedInstanceState);
-            //btnLogin.Click += delegate { StartActivity(typeof(AddUserDetailsActivity)); };
-            //// btnLogin.Click += BtnLogin_Click1;
-            //// Create your application here
-        
-            //btnRegister.Click += delegate { StartActivity(typeof(navigation)); };
-        }
-
-        private void BtnLogin_Click1(object sender, EventArgs e)
-        {
-            StartActivity(typeof(AddUserDetailsActivity));
-        }
-
-        //private void BtnLogin_Click(object sender, EventArgs e)
-        //{
             
-        //}
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.activity_login);
+            btn1 = FindViewById<Button>(Resource.Id.btn_register_page);
+            btn1.Click += Btn1_Click;
+
+            // Create your application here
+        }
+
+        private void Btn1_Click(object sender, EventArgs e)
+        {
+             StartActivity(typeof(AddUserDetailsActivity)); 
+            // SetContentView(Resource.Layout.navigation_layout);
+        }
     }
 }

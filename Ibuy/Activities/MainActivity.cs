@@ -44,8 +44,8 @@ namespace Ibuy
             btnLogin = FindViewById<Button>(Resource.Id.btn_login_page);
             btnList.Click += BtnList_Click;
             btnMap.Click += BtnMap_Click;
-            btnLogin.Click += delegate { StartActivity(typeof(LoginActivity)); };
-            btnAddUser.Click += delegate { StartActivity(typeof(AddUserDetailsActivity)); };
+            btnLogin.Click         += delegate      { StartActivity(typeof(LoginActivity)); };
+            btnAddUser.Click +=     delegate    { StartActivity(typeof(AddUserDetailsActivity)); };
             btnUpdateUser.Click += delegate { StartActivity(typeof(UpdateUserDetailsActivity)); };
             btnDeleteUser.Click += delegate { StartActivity(typeof(DeleteUserDetailsActivity)); };
 
